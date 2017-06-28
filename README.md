@@ -8,7 +8,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'redis_mirroring'
+gem 'redis_mirroring', git: "https://github.com/YoshitsuguFujii/redis_mirroring.git"
 ```
 
 And then execute:

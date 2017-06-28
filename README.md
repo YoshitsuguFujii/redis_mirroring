@@ -19,7 +19,7 @@ And then execute:
 
 ### model
 
-```
+```ruby
 class Timeline < ActiveRecord::Base
   mirroring key: :user_id, order: { updated_at: :desc }, worker: TimelineWorker
 end
@@ -32,7 +32,7 @@ worker指定時は別途sidekiqのworkerを作成。
 
 ### Worker 
 
-```
+```ruby
 class TimelineWorker
   include Sidekiq::Worker
 
@@ -45,7 +45,7 @@ end
 
 ### 取得
 
-```
+```ruby
 # paging時
 @timeline = Timeline.mirroring_paginate(current_user.id, page: params[:page], per_page: params[:per_page])
 

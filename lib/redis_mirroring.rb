@@ -2,7 +2,6 @@ require "redis_mirroring/version"
 require 'active_support/dependencies/autoload'
 
 module RedisMirroring
-  extend ActiveSupport::Concern
   extend ActiveSupport::Autoload
 
   autoload :ActsAsPaginatable

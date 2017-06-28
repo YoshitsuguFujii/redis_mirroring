@@ -42,7 +42,6 @@ module RedisMirroring
 
     def length(key)
       redis.llen(key)
-      raise RedisDataNotFound if vals.blank?
     rescue => ex
       Rails.logger.error("#{ex.class.name} : #{mirroring_key} => #{key}")
       ar_search_by_key(key).count

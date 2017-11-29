@@ -51,7 +51,7 @@ module RedisMirroring
     def save_to_redis(key)
       redis_values = ar_search_by_key(key)
       delete(key)
-      redis.rpush(key, redis_values.map{|v| Marshal.dump(v) })
+      redis.rpush(key, redis_values.map{|v| Marshal.dump(v) }) if redis_values.present?
     end
 
     def ar_search_by_key(key)
